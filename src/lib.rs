@@ -1,10 +1,11 @@
 use std::collections::HashSet;
 #[cfg(not(feature = "u64-turbocollatz"))]
-type StepsType = u32;
+pub type StepsType = u32;
 
 #[cfg(feature = "u64-turbocollatz")]
-type StepsType = u64;
+pub type StepsType = u64;
 
+/// Given a starting point and a list of stopping points, verify the Collatz conjecture and return the steps if requested using return_steps.
 pub fn collatz(seed: StepsType, print_steps: bool, known_good: &HashSet<StepsType>, return_steps: bool) -> Vec<StepsType> {
     let mut steps: Vec<StepsType> = vec!();
     let mut x: StepsType = seed;
@@ -23,6 +24,7 @@ pub fn collatz(seed: StepsType, print_steps: bool, known_good: &HashSet<StepsTyp
     steps
 }
 
+/// Verify a range of integers and then return the total number of steps that it took to complete. If use_slow is set to true, then memory-intensive caching will be disabled at the cost of performance.
 pub fn collatz_ranged(start: StepsType, end: StepsType, use_slow: bool) -> u32 {
     let mut known_good:HashSet<StepsType> = HashSet::from([1]);
     let mut total_steps:u32 = 0;
@@ -34,6 +36,7 @@ pub fn collatz_ranged(start: StepsType, end: StepsType, use_slow: bool) -> u32 {
     total_steps
 }
 
+/// A simplified interface for collatz().
 pub fn easy_collatz(seed: StepsType, print_steps: bool) -> Vec<u32> {
     collatz(seed, print_steps, &HashSet::from([1]), true)
 }

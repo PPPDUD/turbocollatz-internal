@@ -37,6 +37,6 @@ pub fn collatz_ranged(start: StepsType, end: StepsType, use_slow: bool) -> u32 {
 }
 
 /// A simplified interface for collatz().
-pub fn easy_collatz(seed: StepsType, print_steps: bool) -> Vec<u32> {
+pub fn easy_collatz(seed: StepsType, print_steps: bool) -> Vec<StepsType> {
     collatz(seed, print_steps, &HashSet::from([1]), true)
 }

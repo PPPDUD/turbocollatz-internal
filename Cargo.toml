@@ -1,0 +1,19 @@
+[package]
+name = "turbocollatz-internal"
+version = "0.1.0"
+edition = "2024"
+authors = ["PPPDUD Censored <mojavesoft@gmail.com>"]
+categories = ["mathematics"]
+description = "The library behind turbocollatz."
+documentation = "https://docs.rs/serde"
+homepage = "https://github.com/PPPDUD/turbocollatz-internal"
+keywords = ["fast", "turbocollatz", "collatz", "math"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/PPPDUD/turbocollatz-internal"
+
+[dependencies]
+
+[features]
+default = []
+u64-turbocollatz = []
